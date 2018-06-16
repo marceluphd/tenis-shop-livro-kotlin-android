@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="thiengo.com.br.tenisshop"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="27" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="thiengo.com.br.tenisshop.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="thiengo.com.br.tenisshop.SignUpActivity"
+            android:label="@string/title_activity_sign_up"
+            android:parentActivityName="thiengo.com.br.tenisshop.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="thiengo.com.br.tenisshop.LoginActivity" />
+        </activity>
+        <activity
+            android:name="thiengo.com.br.tenisshop.SneakersActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="thiengo.com.br.tenisshop.SneakerDetailsActivity"
+            android:label="@string/title_activity_sneaker_details"
+            android:parentActivityName="thiengo.com.br.tenisshop.SneakersActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="thiengo.com.br.tenisshop.SneakersActivity" />
+        </activity>
+        <activity
+            android:name="thiengo.com.br.tenisshop.ThankYouActivity"
+            android:label="@string/title_activity_thank_you"
+            android:parentActivityName="thiengo.com.br.tenisshop.SneakersActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="thiengo.com.br.tenisshop.SneakersActivity" />
+        </activity>
+
+        <service android:name="com.appsee.AppseeBackgroundUploader" />
+
+        <meta-data
+            android:name="com.appsee.SDKVersion"
+            android:value="2.4.1" />
+
+        <provider
+            android:name="com.android.tools.ir.server.InstantRunContentProvider"
+            android:authorities="thiengo.com.br.tenisshop.com.android.tools.ir.server.InstantRunContentProvider"
+            android:multiprocess="true" />
+    </application>
+
+</manifest>
